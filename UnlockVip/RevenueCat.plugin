@@ -1,0 +1,15 @@
+#!name=RevenueCat解锁
+#!desc=RevenueCat解锁
+#!homepage=https://yfamily.ml
+#!author= 
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/appraven.png
+
+[Script]
+
+response if ${url} ~= /^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$)/i then script("https://ddgksf2013.top/scripts/revenuecat.vip.js") with tag="RevenueCat Response", timeout=60, requires_body=true
+
+request if ${url} ~= /^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers)/i then script("https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js") with tag="RevenueCat Delete Header", timeout=60
+
+[Mitm]
+
+hostname = api.revenuecat.com, api.rc-backup.com
